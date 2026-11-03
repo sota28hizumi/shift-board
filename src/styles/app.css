@@ -231,6 +231,7 @@ fieldset { border: 0; padding: 0; min-width: 0; }
   background: var(--panel); border: 1px solid var(--line-strong); border-radius: var(--border-radius-8);
   padding: .375rem .75rem; margin-bottom: .5rem; line-height: var(--line-height-150);
 }
+@media (max-width: 40rem) { .strip { column-gap: .5rem; } }   /* 幅375pxで予定給料が5桁でも1行に収める */
 .strip__period { font-size: var(--font-size-14); color: var(--ink-2); font-weight: 700; }
 .strip__spacer { flex: 1 1 auto; }
 .strip__gap { font-size: var(--font-size-14); color: var(--ink-2); white-space: nowrap; }
@@ -241,7 +242,8 @@ fieldset { border: 0; padding: 0; min-width: 0; }
 .strip__stat.is-money { color: var(--money); }
 
 /* ── タイムライン ───────────────────────────────────── */
-.tl { background: var(--panel); border: 1px solid var(--line-strong); border-radius: var(--border-radius-8); overflow: hidden; }
+.tl { background: var(--panel); border: 1px solid var(--line-strong); border-radius: var(--border-radius-8); overflow: hidden;
+  scroll-margin-top: 5rem; }   /* ページ内リンクで飛んだとき固定ストリップ（最大72px）に隠れない */
 .tl__axis { position: relative; height: 1.5rem; border-bottom: 1px solid var(--line);
   margin-left: var(--daycol); margin-right: calc(var(--totcol) + var(--ngcol)); }
 /* 目盛りは表示領域が限られるため 12px（DADS の 14px 未満を避ける原則の例外．同じ情報は編集パネルとサマリーにある） */
@@ -304,6 +306,8 @@ fieldset { border: 0; padding: 0; min-width: 0; }
 @container (max-width: 99px) { .tl__handle::after { display: none; } }
 @container (max-width: 45px) { .tl__btxt { display: none; } }
 @container (max-width: 89px) { .tl__btxt { font-size: .625rem; letter-spacing: -.03em; padding: 0 .125rem; } }
+/* 「17:00–21:00」（10px で約67px）が入らない幅では開始時刻だけ出す */
+@container (max-width: 66px) { .tl__bend { display: none; } }
 @container (max-width: 129px) { .tl__bdur, .tl__del { display: none; } }
 @container (min-width: 130px) { .tl__btxt { padding-right: 2.125rem; } }
 

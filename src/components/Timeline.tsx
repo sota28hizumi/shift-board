@@ -97,7 +97,7 @@ export function Timeline(p: Props) {
   };
 
   return (
-    <section className="tl" aria-label="タイムライン">
+    <section className="tl" id="timeline" aria-label="タイムライン">
       <div className="tl__axis" aria-hidden="true">
         {TICKS.map(h => (
           <span key={h} className={'tl__tick' + (h % 2 === 0 ? ' is-even' : '')} style={{ left: pct(h * 60) + '%' }}>{h}</span>
@@ -150,7 +150,7 @@ export function Timeline(p: Props) {
                       <div key={b.id} data-role="bar" data-bar={b.id}
                         className={'tl__bar' + (bad ? ' is-warn' : '')}
                         style={{ left: pct(b.start) + '%', width: (pct(b.end) - pct(b.start)) + '%' }}>
-                        <span className="tl__btxt">{toHM(b.start)}–{toHM(b.end)}
+                        <span className="tl__btxt">{toHM(b.start)}<span className="tl__bend">–{toHM(b.end)}</span>
                           <span className="tl__bdur">{fmtH(b.end - b.start)}h</span></span>
                         {!off && <div className="tl__handle is-l" data-role="hl" data-bar={b.id} />}
                         {!off && <div className="tl__handle is-r" data-role="hr" data-bar={b.id} />}

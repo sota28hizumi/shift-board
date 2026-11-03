@@ -89,6 +89,8 @@ export default function App() {
             <p className="brand__sub">半月ぶんの希望をつくって，下の枠をスクショで提出する</p>
           </div>
         </div>
+        {/* 1画面目はサマリーで埋まるので，入力場所へすぐ移れるようにする */}
+        <a className="btn btn--text" href="#timeline">希望を入力 ↓</a>
         <p className={'save-chip' + (saved ? '' : ' is-bad')} role="status">
           <Icon name={saved ? 'check' : 'alert'} />
           {saved ? 'この端末に自動保存' : '保存できません。ファイルに書き出してください'}
