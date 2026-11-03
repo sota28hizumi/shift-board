@@ -3,6 +3,13 @@
 Artifact 版（`../shift-board.html`）を Vite＋React＋TypeScript の Web アプリにしたもの。
 Artifact 版はそのまま残してあり、状態JSON（version 3）は両者で共通。
 
+## 公開先
+
+https://sota28hizumi.github.io/shift-board/ （GitHub Pages）
+
+`main` に push すると `.github/workflows/deploy.yml` がビルドして公開する。
+スマホではこの URL を開いてホーム画面に追加して使う（iOS はホーム画面版と Safari で保存データが別になる）。
+
 ## 起動
 
 ```powershell
