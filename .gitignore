@@ -1,0 +1,4 @@
+node_modules/
+dist/
+# src/styles と同じ中身の重複フォルダ（公開しない）
+/webapp/
