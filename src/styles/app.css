@@ -144,6 +144,7 @@ fieldset { border: 0; padding: 0; min-width: 0; }
   font-size: var(--font-size-16); line-height: var(--line-height-160); color: #1A1A1A;
 }
 .paper__date, .paper__time { font-family: var(--font-family-mono); }
+.paper__seg { white-space: nowrap; }
 .paper__dow { font-size: var(--font-size-14); color: #4D4D4D; }
 .paper__hours { font-family: var(--font-family-mono); font-size: var(--font-size-14); color: #4D4D4D; }
 .paper__row.is-sun .paper__date, .paper__row.is-sun .paper__dow { color: #CE0000; }

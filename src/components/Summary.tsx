@@ -31,7 +31,10 @@ export function Summary({ period, days, rows, tot }: Props) {
               <li key={r.d.key} className={cls}>
                 <span className="paper__date">{period.month}/{r.d.date}</span>
                 <span className="paper__dow">{DOW[r.d.dow]}{r.d.hol ? '祝' : ''}</span>
-                <span className="paper__time">{r.text}</span>
+                {/* 時間帯の途中では改行せず，「、」の後でだけ折り返す */}
+                <span className="paper__time">{r.text.split('、').map((t, i, a) => (
+                  <span key={i} className="paper__seg">{t}{i < a.length - 1 ? '、' : ''}</span>
+                ))}</span>
                 <span className="paper__hours">{r.min > 0 ? fmtH(r.min) + 'h' : ''}</span>
               </li>
             );
